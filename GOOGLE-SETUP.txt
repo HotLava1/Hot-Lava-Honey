@@ -1,0 +1,12 @@
+HOT LAVA HONEY — FREE PUBLIC WEBSITE + GOOGLE SEARCH SETUP
+
+1. Publish this entire folder to a public static web host. A free option is GitHub Pages.
+2. Once you know your final public website URL, edit robots.txt and sitemap.xml and replace:
+   YOUR-PUBLIC-WEBSITE-URL
+   with the public host name/path.
+3. If you later buy a custom domain, use that domain instead and update those two files again.
+4. Add the public website to Google Search Console.
+5. Submit sitemap.xml in Search Console.
+6. Use Search Console's URL Inspection tool to request indexing of the homepage.
+
+Google decides when and whether a page is indexed. Publishing and submitting a sitemap helps discovery but cannot guarantee ranking or immediate appearance.

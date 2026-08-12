@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Replace YOUR-PUBLIC-WEBSITE-URL with your real website address after publishing. -->
+  <url>
+    <loc>https://YOUR-PUBLIC-WEBSITE-URL/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>

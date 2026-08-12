@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# After you publish the site, replace YOUR-PUBLIC-WEBSITE-URL below with the real public address.
+Sitemap: https://YOUR-PUBLIC-WEBSITE-URL/sitemap.xml
