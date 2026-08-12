@@ -85,7 +85,7 @@ footer{max-width:1180px;margin:auto;padding:36px 28px 50px;border-top:1px solid 
 
 /* Photography update */
 .hero-photo-wrap{height:620px;position:relative;min-width:0;display:grid;place-items:center;padding:18px}
-.hero-label-photo{width:min(100%,560px);max-height:590px;object-fit:contain;border-radius:34px;box-shadow:0 28px 70px rgba(54,25,9,.28);transform:rotate(1.2deg);border:1px solid rgba(255,255,255,.5)}
+.hero-label-photo{width:min(100%,560px);max-height:590px;object-fit:contain;border-radius:34px;box-shadow:0 28px 70px rgba(54,25,9,.28);transform:rotate(0deg);border:1px solid rgba(255,255,255,.5)}
 .product-photo-card{margin:0;position:relative;overflow:hidden;border-radius:var(--radius);box-shadow:var(--shadow);min-height:610px;background:#efe3ca}
 .product-photo-card img{width:100%;height:610px;display:block;object-fit:cover}
 .product-photo-card figcaption{position:absolute;left:20px;right:20px;bottom:20px;padding:13px 16px;border-radius:14px;background:rgba(29,19,13,.78);backdrop-filter:blur(8px);color:white;font-size:.86rem}
