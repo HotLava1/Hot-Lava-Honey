@@ -138,3 +138,12 @@ footer{max-width:1180px;margin:auto;padding:36px 28px 50px;border-top:1px solid 
 .language-picker select{max-width:112px;border:0;background:transparent;color:inherit;font:inherit;font-weight:700;cursor:pointer;outline:0}
 .language-picker:focus-within{outline:3px solid rgba(224,89,58,.25);outline-offset:2px}
 @media(max-width:900px){.language-picker{justify-content:center;width:100%;box-sizing:border-box}.language-picker select{max-width:none}.nav-links .language-picker{text-align:center}}
+
+
+/* Scripture */
+.scripture-section{display:grid;grid-template-columns:auto minmax(0,760px);justify-content:center;align-items:center;gap:clamp(1.25rem,4vw,3.5rem);padding:clamp(3.5rem,7vw,6rem) max(28px,calc((100vw - 1120px)/2));color:#fff;background:linear-gradient(125deg,#732d1d,#9e3d21 58%,#c46a2d)}
+.scripture-mark{display:grid;place-items:center;width:clamp(5rem,10vw,8rem);aspect-ratio:1;border:1px solid rgba(255,216,135,.5);border-radius:50%;color:#ffd875;font-size:clamp(2rem,4vw,3.25rem);box-shadow:inset 0 0 0 10px rgba(255,255,255,.03)}
+.scripture-section .eyebrow{color:#ffd875}
+.scripture-section blockquote{margin:0 0 .9rem;font:600 clamp(2rem,4vw,3.75rem)/1.15 "Fraunces",serif;letter-spacing:-.025em}
+.scripture-section cite{color:#ffe6b3;font-style:normal;font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+@media(max-width:560px){.scripture-section{grid-template-columns:1fr;padding-left:20px;padding-right:20px;text-align:center}.scripture-mark{margin:auto}}
