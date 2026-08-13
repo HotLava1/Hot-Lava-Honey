@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order Hot Lava Honey | Kaʻū, Hawaiʻi</title>
+  <meta name="description" content="Order Hot Lava Honey, pure raw ʻōhiʻa lehua Hawaiian honey harvested in Kaʻū, Hawaiʻi. Shop jars, whipped honey, Meli Bears and party favors." />
+  <meta name="theme-color" content="#1b120b" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Hot Lava Honey" />
+  <meta property="og:title" content="Order Hot Lava Honey" />
+  <meta property="og:description" content="Pure Hawaiian honey, gifts and favors from Kaʻū, Hawaiʻi." />
+  <meta property="og:image" content="hot-lava-honey-label.jpeg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .order-hero{min-height:52vh;padding:clamp(7rem,13vw,10rem) clamp(1.25rem,6vw,6rem) 4rem;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);gap:clamp(2rem,6vw,5rem);align-items:center;background:linear-gradient(120deg,rgba(27,18,11,.92),rgba(91,44,20,.72)),url("golden-honey-jars.jpeg") center/cover;color:#fff}
+    .order-hero h1{max-width:760px;margin:.35rem 0 1rem;font-family:Fraunces,Georgia,serif;font-size:clamp(2.6rem,7vw,5.6rem);line-height:.98}
+    .order-hero p{max-width:650px;font-size:1.08rem;line-height:1.7}
+    .order-hero-photo{width:min(100%,460px);justify-self:center;border:10px solid rgba(255,255,255,.16);border-radius:28px;box-shadow:0 24px 60px rgba(0,0,0,.34)}
+    .shop{padding:clamp(4rem,8vw,7rem) clamp(1.25rem,5vw,5rem);background:#fff8e9}
+    .shop-heading{max-width:760px;margin:0 auto 2.5rem;text-align:center}
+    .shop-heading h2{margin:.4rem 0 .8rem;font-family:Fraunces,Georgia,serif;font-size:clamp(2rem,5vw,3.6rem)}
+    .inventory-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem;max-width:1100px;margin:0 auto 2.5rem}
+    .inventory-card{display:flex;flex-direction:column;padding:clamp(1.35rem,3vw,2rem);border:1px solid rgba(91,57,25,.16);border-radius:22px;background:#fff;box-shadow:0 14px 36px rgba(91,57,25,.1)}
+    .inventory-size{margin:0 0 .45rem;color:#9b3d20;font-size:.78rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase}
+    .inventory-card h3{margin:0 0 .7rem;font-family:Fraunces,Georgia,serif;font-size:clamp(1.35rem,2.4vw,1.8rem)}
+    .inventory-card>p:not(.inventory-size){margin:0 0 1.3rem;color:#66584c;line-height:1.65}
+    .price-list{display:grid;gap:.55rem;margin-top:auto;padding-top:1rem;border-top:1px solid rgba(91,57,25,.13)}
+    .price-row{display:flex;justify-content:space-between;gap:1rem;align-items:baseline}
+    .price-row span{color:#66584c}.price-row strong{color:#7b2c16;font-size:1.2rem;white-space:nowrap}
+    .order-panel{max-width:900px;margin:0 auto;padding:clamp(1.5rem,4vw,2.4rem);border-radius:24px;background:#1b120b;color:#fff;text-align:center}
+    .order-panel h2{margin:.2rem 0 .7rem;font-family:Fraunces,Georgia,serif;font-size:clamp(1.7rem,4vw,2.6rem)}
+    .order-panel p{max-width:700px;margin:0 auto 1.35rem;color:#f5e7d0;line-height:1.65}
+    .order-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem}
+    .order-actions .button{min-width:220px}
+    .venmo{background:#3d95ce;color:#fff;border-color:#3d95ce}.venmo:hover{background:#2d7fb4;border-color:#2d7fb4}
+    .order-note{max-width:780px;margin:1rem auto 0;color:#715f50;text-align:center;font-size:.9rem;line-height:1.55}
+    @media(max-width:800px){.order-hero{grid-template-columns:1fr;text-align:center}.order-hero p{margin-left:auto;margin-right:auto}.order-hero-photo{max-width:330px}.inventory-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Hot Lava Honey home"><span class="brand-mark" aria-hidden="true">🍯</span><span>Hot Lava Honey</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="#shop">Merchandise</a>
+      <a href="#order">How to Order</a>
+      <a class="nav-cta" href="tel:+18084959903">Call to Order</a>
+    </nav>
+  </header>
+  <main>
+    <section class="order-hero">
+      <div>
+        <p class="eyebrow light">Harvested in Kaʻū, Hawaiʻi</p>
+        <h1>Bring home Hot Lava Honey.</h1>
+        <p>Pure raw ʻōhiʻa lehua Hawaiian honey, whipped honey, party favors and gifts—made with aloha on Hawaiʻi Island.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#shop">Shop Merchandise</a>
+          <a class="button button-secondary" href="https://www.venmo.com/u/hotlavahoney" target="_blank" rel="noopener noreferrer">Pay with Venmo</a>
+        </div>
+      </div>
+      <img class="order-hero-photo" src="hot-lava-honey-label.jpeg" alt="Hot Lava Honey label featuring ʻōhiʻa lehua, honeybees and a volcanic Hawaiian landscape" />
+    </section>
+    <section class="shop" id="shop">
+      <div class="shop-heading">
+        <p class="eyebrow">Available to Order</p>
+        <h2>Choose your Hot Lava Honey.</h2>
+        <p>For the pantry, celebrations, gifts and baskets. Please call to confirm current availability and order details.</p>
+      </div>
+      <div class="inventory-grid">
+        <article class="inventory-card"><p class="inventory-size">8 ounce bottle</p><h3>Pure Raw ʻŌhiʻa Lehua Honey</h3><p>Golden, aromatic Hawaiian honey harvested in Kaʻū.</p><div class="price-list"><div class="price-row"><span>Per bottle</span><strong>$12.60</strong></div></div></article>
+        <article class="inventory-card"><p class="inventory-size">8 ounce bottle</p><h3>Pure Raw Whipped ʻŌhiʻa Lehua Honey</h3><p>Silky, spreadable whipped honey with pure ʻōhiʻa lehua character.</p><div class="price-list"><div class="price-row"><span>Per bottle</span><strong>$14.00</strong></div></div></article>
+        <article class="inventory-card"><p class="inventory-size">2 ounce “Meli Bear”</p><h3>Signature ʻŌhiʻa Lehua Favors</h3><p>A sweet little bottle for parties, events and guest favors.</p><div class="price-list"><div class="price-row"><span>Single bottle</span><strong>$3.10</strong></div><div class="price-row"><span>5-pack</span><strong>$13.00</strong></div></div></article>
+        <article class="inventory-card"><p class="inventory-size">1.5 ounce mini glass “Omiyagi”</p><h3>Party Favors &amp; Gifts</h3><p>Mini glass honey bottles for favors, gifts and basket fillers.</p><div class="price-list"><div class="price-row"><span>Each</span><strong>$2.50</strong></div></div></article>
+      </div>
+      <div class="order-panel" id="order">
+        <p class="eyebrow light">Order Online or by Phone</p>
+        <h2>Ready for something sweet?</h2>
+        <p>Call Hot Lava Honey to confirm merchandise and availability, then use Venmo for convenient payment.</p>
+        <div class="order-actions">
+          <a class="button button-primary" href="tel:+18084959903">Call 808-495-9903</a>
+          <a class="button venmo" href="https://www.venmo.com/u/hotlavahoney" target="_blank" rel="noopener noreferrer" aria-label="Pay Hot Lava Honey with Venmo (opens in a new tab)">Pay @hotlavahoney</a>
+        </div>
+      </div>
+      <p class="order-note">Please include your name and agreed order details with payment. Shipping, pickup and availability are confirmed directly by Hot Lava Honey.</p>
+    </section>
+  </main>
+  <footer>
+    <div class="brand footer-brand"><span class="brand-mark">🍯</span><span>Hot Lava Honey</span></div>
+    <p>Pure Hawaiian honey · Harvested in Kaʻū, Hawaiʻi</p>
+    <p>P.O. Box 6178 · Ocean View, HI 96737 · 808-495-9903</p>
+    <p>© <span id="year"></span> Hot Lava Honey. All rights reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
