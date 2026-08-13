@@ -1,0 +1,27 @@
+.scripture-page{background:#fffaf0}
+.scripture-header{max-width:1280px}
+.scripture-header .active{color:var(--lava)}
+.verse-main{overflow:hidden}
+.verse-hero{min-height:660px;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:60px;padding:clamp(5rem,10vw,9rem) max(28px,calc((100vw - 1120px)/2));position:relative;color:#fff;background:radial-gradient(circle at 85% 22%,rgba(247,205,85,.32),transparent 23%),linear-gradient(135deg,#391a12 0%,#7d2e1d 52%,#bd632b 100%)}
+.verse-hero:after{content:"";position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,230,179,.18) 1.5px,transparent 1.5px);background-size:28px 28px;mask-image:linear-gradient(90deg,transparent 20%,#000)}
+.verse-hero-copy,.honey-seal{position:relative;z-index:1}
+.verse-hero h1{max-width:720px;margin-bottom:24px;font-family:"Great Vibes","Brush Script MT",cursive;font-size:clamp(5rem,10vw,9rem);font-weight:400;line-height:.92;letter-spacing:0}
+.verse-hero-copy>p:not(.eyebrow){max-width:650px;color:#f7e6d9;font-size:1.16rem;line-height:1.8}
+.translation-note{display:inline-block;margin-top:20px;padding:8px 13px;border:1px solid rgba(255,255,255,.27);border-radius:999px;color:#ffe4ae;font-size:.72rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
+.honey-seal{justify-self:center;display:flex;flex-direction:column;align-items:center;justify-content:center;width:min(30vw,330px);aspect-ratio:1;border:1px solid rgba(255,225,156,.55);border-radius:50%;box-shadow:inset 0 0 0 14px rgba(255,255,255,.035),0 25px 70px rgba(32,10,4,.2);text-align:center}
+.honey-seal span{color:#ffd875;font-size:2rem}.honey-seal strong{margin-top:10px;font:600 1rem "Fraunces",serif;letter-spacing:.12em;text-transform:uppercase}.honey-seal em{color:#ffd875;font:400 clamp(2.4rem,4vw,4rem) "Great Vibes",cursive}
+.verse-journey{max-width:1120px;margin:auto;padding:clamp(5rem,10vw,9rem) 28px;position:relative}
+.verse-journey:before{content:"";position:absolute;top:330px;bottom:130px;left:50%;width:1px;background:linear-gradient(transparent,#d9a24e 8%,#d9a24e 92%,transparent)}
+.journey-intro{max-width:760px;margin:0 auto 90px;text-align:center}.journey-intro>p:last-child{max-width:620px;margin:auto;color:var(--muted);font-size:1.06rem}
+.verse-card{width:calc(50% - 45px);margin-bottom:55px;padding:34px;position:relative;border:1px solid rgba(158,61,33,.13);border-radius:24px;background:rgba(255,253,248,.94);box-shadow:0 18px 50px rgba(67,39,18,.09)}
+.verse-card:nth-of-type(odd){margin-left:auto}
+.verse-card:after{content:"";position:absolute;top:52px;width:10px;height:10px;border:5px solid #fffaf0;border-radius:50%;background:var(--honey-deep);box-shadow:0 0 0 1px #d9a24e}
+.verse-card:nth-of-type(even):after{right:-55px}.verse-card:nth-of-type(odd):after{left:-55px}
+.verse-number{position:absolute;top:22px;right:26px;color:rgba(158,61,33,.18);font:700 2.6rem "Fraunces",serif}
+.verse-theme{margin:0 0 16px;color:var(--lava);font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+.verse-card blockquote{margin:0 0 22px;color:#45251a;font:400 clamp(2.1rem,3.5vw,3.1rem)/1.2 "Great Vibes","Brush Script MT",cursive;text-wrap:balance}
+.verse-card cite{display:flex;align-items:center;gap:12px;color:var(--honey-deep);font-style:normal;font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}.verse-card cite:before{content:"";width:28px;height:1px;background:#d9a24e}
+.featured-verse{color:#fff;border-color:transparent;background:linear-gradient(145deg,#6d291b,#a74625);box-shadow:0 24px 65px rgba(92,35,19,.24)}.featured-verse blockquote{color:#fff8e8}.featured-verse .verse-theme,.featured-verse cite{color:#ffd875}.featured-verse .verse-number{color:rgba(255,255,255,.14)}
+.verse-closing{max-width:900px;margin:0 auto 110px;padding:65px;text-align:center;border-radius:32px;background:linear-gradient(140deg,#f8dfa7,#f6b59e)}.verse-closing>span{color:var(--lava);font-size:1.7rem}.verse-closing>p{max-width:720px;margin:18px auto 30px;font:600 clamp(1.8rem,3.4vw,3rem)/1.25 "Fraunces",serif}.verse-closing>div{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+@media(max-width:900px){.verse-hero{grid-template-columns:1fr;text-align:center}.verse-hero-copy>p:not(.eyebrow){margin-left:auto;margin-right:auto}.honey-seal{width:min(60vw,290px)}.verse-card{width:calc(50% - 30px)}.verse-card:nth-of-type(even):after{right:-40px}.verse-card:nth-of-type(odd):after{left:-40px}}
+@media(max-width:620px){.verse-hero{min-height:auto;padding-top:75px;padding-bottom:75px}.verse-hero h1{font-size:clamp(4.4rem,20vw,7rem)}.honey-seal{width:min(72vw,260px)}.verse-journey{padding-left:20px;padding-right:20px}.verse-journey:before{left:30px;top:320px}.journey-intro{margin-bottom:65px;padding-left:25px}.verse-card,.verse-card:nth-of-type(odd){width:calc(100% - 32px);margin-left:32px;margin-bottom:28px;padding:28px 25px}.verse-card:nth-of-type(even):after,.verse-card:nth-of-type(odd):after{left:-37px;right:auto}.verse-card blockquote{font-size:clamp(2.15rem,10vw,2.85rem)}.verse-closing{margin:0 18px 75px;padding:45px 24px}.verse-closing .button{width:100%}}
