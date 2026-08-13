@@ -277,5 +277,13 @@
     })();
   </script>
 
+  <div class="music-control" role="group" aria-label="Background music controls">
+    <audio id="site-music" autoplay loop preload="metadata">
+      <source src="luau-background.mp3" type="audio/mpeg">
+    </audio>
+    <button id="music-toggle" type="button" aria-pressed="false">♫ Play Music</button>
+    <a class="music-credit" href="https://pixabay.com/music/island-luau-144121/" target="_blank" rel="noopener noreferrer" aria-label="Luau by Matthew Mike Music on Pixabay">Luau · Pixabay</a>
+  </div>
+  <script src="music.js"></script>
 </body>
 </html>
