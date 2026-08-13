@@ -16,3 +16,26 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 });
 
 document.getElementById('year').textContent = new Date().getFullYear();
+
+
+const languageSelect = document.getElementById('language-select');
+
+languageSelect?.addEventListener('change', event => {
+  const language = event.target.value;
+  if (!language) return;
+
+  const pageUrl = new URL(window.location.href);
+  pageUrl.search = '';
+  pageUrl.hash = '';
+
+  if (language === 'en') {
+    window.location.assign(pageUrl.toString());
+    return;
+  }
+
+  const translateUrl = new URL('https://translate.google.com/translate');
+  translateUrl.searchParams.set('sl', 'en');
+  translateUrl.searchParams.set('tl', language);
+  translateUrl.searchParams.set('u', pageUrl.toString());
+  window.location.assign(translateUrl.toString());
+});
