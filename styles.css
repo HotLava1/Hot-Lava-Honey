@@ -122,3 +122,11 @@ footer{max-width:1180px;margin:auto;padding:36px 28px 50px;border-top:1px solid 
 .benefits-sources a{text-decoration:underline;text-underline-offset:3px}
 @media(max-width:900px){.benefits-heading{grid-template-columns:1fr;gap:12px}.benefits-grid{grid-template-columns:1fr 1fr}.benefits-grid article,.benefits-grid article:nth-child(4),.benefits-grid article:nth-child(5){grid-column:auto}}
 @media(max-width:560px){.benefits-section{padding:85px 20px 75px}.benefits-grid{grid-template-columns:1fr}.benefits-note{grid-template-columns:1fr;gap:6px}}
+
+
+/* Background music control */
+.music-control{position:fixed;right:18px;bottom:18px;z-index:100;display:flex;align-items:center;gap:9px;padding:9px 12px;border:1px solid rgba(255,255,255,.45);border-radius:999px;background:rgba(45,28,20,.9);box-shadow:0 10px 30px rgba(45,28,20,.22);backdrop-filter:blur(10px);color:#fff}
+.music-control button{border:0;background:transparent;color:#fff;font:inherit;font-size:.82rem;font-weight:700;cursor:pointer;white-space:nowrap}
+.music-credit{color:rgba(255,255,255,.72);font-size:.68rem;text-decoration:underline;text-underline-offset:2px}
+.music-control:focus-within{outline:3px solid rgba(247,205,85,.55);outline-offset:2px}
+@media(max-width:560px){.music-control{right:10px;bottom:10px;padding:8px 10px}.music-credit{display:none}}
