@@ -79,6 +79,22 @@
     .status-message{min-height:1.5rem;color:#41533a;font-weight:700}
     @media(max-width:700px){.discount-box{grid-template-columns:1fr 1fr}.discount-field{grid-column:1/-1}.cart-row{grid-template-columns:1fr auto}.cart-row .cart-line-total{grid-column:1}.remove-item{justify-self:end}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.cart-heading{align-items:flex-start;flex-direction:column}}
     @media(max-width:800px){.order-hero{grid-template-columns:1fr;text-align:center}.order-hero p{margin-left:auto;margin-right:auto}.order-hero-photo{max-width:330px}.inventory-grid{grid-template-columns:1fr}}
+
+    .order-trust-bar{display:flex;justify-content:center;gap:clamp(1rem,4vw,3.5rem);flex-wrap:wrap;padding:12px 24px;background:#f7cd55;color:#2d1c14;font-size:.86rem;font-weight:800;text-align:center}
+    .order-steps{padding:clamp(4rem,8vw,6.5rem) clamp(1.25rem,5vw,5rem);background:#fff}
+    .order-steps-heading{max-width:760px;margin:0 auto 2.2rem;text-align:center}.order-steps-heading h2,.order-faq h2{font-family:Fraunces,Georgia,serif;font-size:clamp(2rem,5vw,3.6rem)}
+    .order-steps-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem;max-width:1100px;margin:auto}
+    .order-steps-grid article{padding:1.7rem;border:1px solid rgba(91,57,25,.14);border-radius:22px;background:#fffaf1;box-shadow:0 12px 30px rgba(91,57,25,.07)}
+    .order-steps-grid article>span{display:grid;place-items:center;width:42px;height:42px;margin-bottom:1rem;border-radius:50%;background:#9b3d20;color:#fff;font-weight:800}
+    .order-steps-grid h3{margin-bottom:.55rem}.order-steps-grid p{margin:0;color:#66584c;line-height:1.65}
+    .product-icon{display:grid;place-items:center;width:58px;height:58px;margin-bottom:1rem;border-radius:18px;background:#fff4d2;font-size:1.75rem}
+    .product-points{display:flex;gap:.45rem;flex-wrap:wrap;margin:0 0 1.2rem;padding:0;list-style:none}.product-points li{padding:.35rem .6rem;border-radius:999px;background:#fff4d2;color:#6a3a22;font-size:.76rem;font-weight:700}
+    .order-faq{max-width:1100px;margin:0 auto 2.5rem;padding:clamp(1.5rem,4vw,2.5rem);border-radius:24px;background:#fff}
+    .order-faq-heading{text-align:center;margin-bottom:1.6rem}.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:.85rem}
+    .faq-grid details{padding:1rem 1.1rem;border:1px solid rgba(91,57,25,.16);border-radius:16px;background:#fffaf1}.faq-grid summary{cursor:pointer;font-weight:800;color:#3e2b1e}.faq-grid p{margin:.75rem 0 0;color:#66584c;line-height:1.6}
+    .food-safety-note{margin:1.2rem 0 0;padding:1rem;border-radius:14px;background:#fff4d2;color:#5a3b28;text-align:center}
+    .checkout-form{scroll-margin-top:100px}.checkout-form h2{font-family:Fraunces,Georgia,serif;font-size:clamp(1.7rem,4vw,2.6rem)}
+    @media(max-width:800px){.order-steps-grid,.faq-grid{grid-template-columns:1fr}.order-trust-bar{align-items:center;flex-direction:column;gap:.35rem}.order-steps{padding-top:3.5rem;padding-bottom:3.5rem}}
   </style>
 </head>
 <body>
@@ -87,39 +103,104 @@
     <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
     <nav class="nav-links" aria-label="Primary navigation">
       <a href="index.html">Home</a>
-      <a href="#shop">Merchandise</a>
-      <a href="#order">How to Order</a>
+      <a href="#shop">Shop</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#order-faq">FAQ</a>
+      <label class="language-picker" for="language-select">
+        <span aria-hidden="true">🌐</span>
+        <span class="sr-only">Translate this website</span>
+        <select id="language-select" aria-label="Translate this website">
+          <option value="">Translate</option>
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="ja">日本語</option>
+          <option value="tl">Filipino</option>
+          <option value="haw">ʻŌlelo Hawaiʻi</option>
+          <option value="zh-CN">中文</option>
+          <option value="ko">한국어</option>
+          <option value="fr">Français</option>
+          <option value="de">Deutsch</option>
+          <option value="pt">Português</option>
+          <option value="it">Italiano</option>
+          <option value="ar">العربية</option>
+          <option value="hi">हिन्दी</option>
+        </select>
+      </label>
       <a class="nav-cta" href="#cart">Cart <span class="cart-count" data-cart-count>0</span></a>
     </nav>
   </header>
   <main>
+    <div class="order-trust-bar" aria-label="Ordering highlights">
+      <span>✓ Clear merchandise pricing</span>
+      <span>✓ Local pickup or shipping quote</span>
+      <span>✓ Confirm details before payment</span>
+    </div>
     <section class="order-hero">
       <div>
-        <p class="eyebrow light">Harvested in Kaʻū, Hawaiʻi</p>
-        <h1>Bring home Hot Lava Honey.</h1>
-        <p>Pure raw ʻōhiʻa lehua Hawaiian honey, whipped honey, party favors and gifts—made with aloha on Hawaiʻi Island.</p>
+        <p class="eyebrow light">Small-batch · Kaʻū, Hawaiʻi</p>
+        <h1>Choose your honey. We’ll confirm the details.</h1>
+        <p>Build your order online, send the prepared request from your email app, and receive personal confirmation of availability, fulfillment and the final total before payment.</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="#shop">Shop Merchandise</a>
-          <a class="button button-secondary" href="#cart">View Cart <span class="cart-count" data-cart-count>0</span></a>
+          <a class="button button-primary" href="#shop">Choose Your Honey</a>
+          <a class="button button-secondary" href="#how-it-works">How Ordering Works</a>
         </div>
       </div>
-      <img class="order-hero-photo" src="hot-lava-honey-label.jpeg" alt="Hot Lava Honey label featuring ʻōhiʻa lehua, honeybees and a volcanic Hawaiian landscape" />
+      <img class="order-hero-photo" src="hot-lava-honey-featured-retouched.jpg" alt="Polished Hot Lava Honey jar with a smooth illustrated label, red-and-white cloth cover and natural raffia bow" />
+    </section>
+    <section class="order-steps" id="how-it-works" aria-labelledby="order-steps-title">
+      <div class="order-steps-heading">
+        <p class="eyebrow">Simple &amp; Personal</p>
+        <h2 id="order-steps-title">Three easy steps from cart to confirmation.</h2>
+      </div>
+      <div class="order-steps-grid">
+        <article><span>1</span><h3>Choose your honey</h3><p>Add jars, favors or gifts to your cart. Merchandise prices are shown before you continue.</p></article>
+        <article><span>2</span><h3>Send your request</h3><p>Enter your contact and fulfillment details. Your email app opens a complete order request for you to review and send.</p></article>
+        <article><span>3</span><h3>Confirm, then pay</h3><p>Hot Lava Honey confirms availability, pickup or shipping charges and the final total before you send payment.</p></article>
+      </div>
     </section>
     <section class="shop" id="shop">
       <div class="shop-heading">
-        <p class="eyebrow">Available to Order</p>
+        <p class="eyebrow">Available to Request</p>
         <h2>Choose your Hot Lava Honey.</h2>
-        <p>For the pantry, celebrations, gifts and baskets. Please call to confirm current availability and order details.</p>
+        <p>For the pantry, celebrations, gifts and baskets. Add your favorites below; availability and any shipping charge will be confirmed before payment.</p>
       </div>
       <div class="inventory-grid">
-        <article class="inventory-card"><p class="inventory-size">8 ounce bottle</p><h3>Pure Raw ʻŌhiʻa Lehua Honey</h3><p>Golden, aromatic Hawaiian honey harvested in Kaʻū.</p><div class="price-list"><div class="price-row"><span>Per bottle</span><strong>$12.60</strong></div><button class="button button-primary add-to-cart" type="button" data-id="raw-8oz" data-name="Pure Raw ʻŌhiʻa Lehua Honey — 8 oz" data-price="12.60">Add to Cart · $12.60</button></div></article>
-        <article class="inventory-card"><p class="inventory-size">8 ounce bottle</p><h3>Pure Raw Whipped ʻŌhiʻa Lehua Honey</h3><p>Silky, spreadable whipped honey with pure ʻōhiʻa lehua character.</p><div class="price-list"><div class="price-row"><span>Per bottle</span><strong>$14.00</strong></div><button class="button button-primary add-to-cart" type="button" data-id="whipped-8oz" data-name="Pure Raw Whipped ʻŌhiʻa Lehua Honey — 8 oz" data-price="14.00">Add to Cart · $14.00</button></div></article>
-        <article class="inventory-card"><p class="inventory-size">2 ounce “Meli Bear”</p><h3>Signature ʻŌhiʻa Lehua Favors</h3><p>A sweet little bottle for parties, events and guest favors.</p><div class="price-list"><div class="price-row"><span>Single bottle</span><strong>$3.10</strong></div><button class="button button-primary add-to-cart" type="button" data-id="meli-single" data-name="Meli Bear — single 2 oz bottle" data-price="3.10">Add Single · $3.10</button><div class="price-row"><span>5-pack</span><strong>$13.00</strong></div><button class="button button-primary add-to-cart" type="button" data-id="meli-five" data-name="Meli Bear — 5-pack of 2 oz bottles" data-price="13.00">Add 5-Pack · $13.00</button></div></article>
-        <article class="inventory-card"><p class="inventory-size">1.5 ounce mini glass “Omiyagi”</p><h3>Party Favors &amp; Gifts</h3><p>Mini glass honey bottles for favors, gifts and basket fillers.</p><div class="price-list"><div class="price-row"><span>Each</span><strong>$2.50</strong></div><button class="button button-primary add-to-cart" type="button" data-id="omiyagi-mini" data-name="Omiyagi mini glass honey — 1.5 oz" data-price="2.50">Add to Cart · $2.50</button></div></article>
+        <article class="inventory-card">
+          <div class="product-icon" aria-hidden="true">🍯</div>
+          <p class="inventory-size">Net wt. 8 oz (226 g)</p>
+          <h3>Pure Raw ʻŌhiʻa Lehua Honey</h3>
+          <p>Golden, aromatic Hawaiian honey harvested in Kaʻū—made for tea, toast, breakfast and gifting.</p>
+          <ul class="product-points"><li>Pure raw honey</li><li>Small-batch</li><li>Gift-ready jar</li></ul>
+          <div class="price-list"><div class="price-row"><span>Per jar</span><strong>$12.60</strong></div><button class="button button-primary add-to-cart" type="button" data-id="raw-8oz" data-name="Pure Raw ʻŌhiʻa Lehua Honey — net wt. 8 oz" data-price="12.60">Add to Cart · $12.60</button></div>
+        </article>
+        <article class="inventory-card">
+          <div class="product-icon" aria-hidden="true">🥄</div>
+          <p class="inventory-size">Net wt. 8 oz (226 g)</p>
+          <h3>Pure Raw Whipped ʻŌhiʻa Lehua Honey</h3>
+          <p>Silky and spreadable, with the floral character of Hawaiian honey and a creamy whipped texture.</p>
+          <ul class="product-points"><li>Smooth texture</li><li>Easy to spread</li><li>Small-batch</li></ul>
+          <div class="price-list"><div class="price-row"><span>Per jar</span><strong>$14.00</strong></div><button class="button button-primary add-to-cart" type="button" data-id="whipped-8oz" data-name="Pure Raw Whipped ʻŌhiʻa Lehua Honey — net wt. 8 oz" data-price="14.00">Add to Cart · $14.00</button></div>
+        </article>
+        <article class="inventory-card">
+          <div class="product-icon" aria-hidden="true">🐻</div>
+          <p class="inventory-size">2 oz “Meli Bear”</p>
+          <h3>Signature ʻŌhiʻa Lehua Favors</h3>
+          <p>A sweet little bottle for celebrations, guest favors, gift baskets and sharing a taste of Hawaiʻi.</p>
+          <ul class="product-points"><li>Single or five-pack</li><li>Party-friendly size</li><li>Ready for gifting</li></ul>
+          <div class="price-list"><div class="price-row"><span>Single bottle</span><strong>$3.10</strong></div><button class="button button-primary add-to-cart" type="button" data-id="meli-single" data-name="Meli Bear — single 2 oz bottle" data-price="3.10">Add Single · $3.10</button><div class="price-row"><span>5-pack</span><strong>$13.00</strong></div><button class="button button-primary add-to-cart" type="button" data-id="meli-five" data-name="Meli Bear — 5-pack of 2 oz bottles" data-price="13.00">Add 5-Pack · $13.00</button></div>
+        </article>
+        <article class="inventory-card">
+          <div class="product-icon" aria-hidden="true">🎁</div>
+          <p class="inventory-size">1.5 oz mini glass “Omiyagi”</p>
+          <h3>Mini Gifts &amp; Favors</h3>
+          <p>Petite glass honey bottles for party tables, thank-you gifts, baskets and special occasions.</p>
+          <ul class="product-points"><li>Mini glass bottle</li><li>Event-friendly</li><li>Easy to share</li></ul>
+          <div class="price-list"><div class="price-row"><span>Each</span><strong>$2.50</strong></div><button class="button button-primary add-to-cart" type="button" data-id="omiyagi-mini" data-name="Omiyagi mini glass honey — 1.5 oz" data-price="2.50">Add to Cart · $2.50</button></div>
+        </article>
       </div>
       <section class="cart-section" id="cart" aria-labelledby="cart-title">
         <div class="cart-heading">
-          <div><p class="eyebrow">Your Shopping Cart</p><h2 id="cart-title">Review your order.</h2></div>
+          <div><p class="eyebrow">Your Shopping Cart</p><h2 id="cart-title">Review your selections.</h2></div>
           <a href="#shop">Continue shopping</a>
         </div>
         <div class="cart-list" id="cart-list" aria-live="polite"></div>
@@ -134,23 +215,23 @@
           <div class="cart-summary discount discount-row" id="discount-row" hidden><span>QUEENMELI777 · 10% off</span><strong id="discount-amount">−$0.00</strong></div>
           <div class="cart-summary final"><span>Final merchandise total</span><strong id="cart-total">$0.00</strong></div>
         </div>
-        <p class="checkout-help">The discount applies to merchandise only. Shipping or delivery charges, if needed, will be confirmed by Hot Lava Honey before payment.</p>
+        <p class="checkout-help">This total covers merchandise only. No payment is due yet; availability and any pickup, shipping or delivery details will be confirmed first.</p>
         <div class="checkout-actions">
-          <button class="button button-primary" id="checkout-button" type="button">Continue to Order Form</button>
+          <button class="button button-primary" id="checkout-button" type="button">Continue to Customer Details</button>
           <button class="button button-secondary" id="clear-cart" type="button">Clear Cart</button>
         </div>
         <form class="checkout-form" id="checkout-form" hidden>
           <div>
             <p class="eyebrow">Customer Details</p>
             <h2>Send your order request.</h2>
-            <p class="checkout-help">This form prepares an email to Hot Lava Honey. You will review and send it from your email app.</p>
+            <p class="checkout-help">Complete the details below. We’ll prepare a complete email request for you to review and send—no payment is collected on this page.</p>
           </div>
           <div class="form-grid">
             <div class="field"><label for="customer-name">Full name</label><input id="customer-name" name="name" autocomplete="name" required></div>
             <div class="field"><label for="customer-email">Email</label><input id="customer-email" name="email" type="email" autocomplete="email" required></div>
             <div class="field"><label for="customer-phone">Phone</label><input id="customer-phone" name="phone" type="tel" autocomplete="tel" required></div>
-            <div class="field"><label for="fulfillment">Receive order by</label><select id="fulfillment" name="fulfillment" required><option value="">Choose one</option><option>Local pickup</option><option>Shipping — please quote cost</option></select></div>
-            <div class="field full"><label for="address">Shipping address <span>(if shipping)</span></label><textarea id="address" name="address" autocomplete="street-address"></textarea></div>
+            <div class="field"><label for="fulfillment">Receive order by</label><select id="fulfillment" name="fulfillment" required><option value="">Choose one</option><option value="Local pickup">Local pickup</option><option value="Shipping — please quote cost">Shipping — please quote cost</option></select></div>
+            <div class="field full"><label for="address">Shipping address <span id="address-guidance">(required when shipping)</span></label><textarea id="address" name="address" autocomplete="street-address" aria-describedby="address-guidance"></textarea></div>
             <div class="field full"><label for="notes">Order notes or questions</label><textarea id="notes" name="notes" placeholder="Preferred pickup time, gift details, or other questions"></textarea></div>
           </div>
           <fieldset class="choice-group">
@@ -158,22 +239,32 @@
             <label><input type="radio" name="payment" value="Venmo @hotlavahoney" required> <span><strong>Venmo</strong><br>Pay @hotlavahoney after availability and final total are confirmed.</span></label>
             <label><input type="radio" name="payment" value="Arrange payment directly" required> <span><strong>Arrange payment directly</strong><br>Hot Lava Honey will contact you to confirm the available payment method.</span></label>
           </fieldset>
-          <div class="checkout-actions"><button class="button button-primary" type="submit">Review &amp; Email My Order</button><a class="button button-secondary" href="mailto:Kaitheislandoyster@gmail.com?subject=Hot%20Lava%20Honey%20Question">Ask a Question</a></div>
+          <div class="checkout-actions"><button class="button button-primary" type="submit">Prepare My Email Order Request</button><a class="button button-secondary" href="mailto:Kaitheislandoyster@gmail.com?subject=Hot%20Lava%20Honey%20Question">Ask a Question</a></div>
           <p class="status-message" id="order-status" role="status"></p>
           <div class="venmo-next" id="venmo-next" hidden>After sending your order request and receiving confirmation, <a href="https://www.venmo.com/u/hotlavahoney" target="_blank" rel="noopener noreferrer"><strong>open Venmo to pay @hotlavahoney</strong></a>.</div>
         </form>
       </section>
+      <section class="order-faq" id="order-faq" aria-labelledby="order-faq-title">
+        <div class="order-faq-heading"><p class="eyebrow">Before You Order</p><h2 id="order-faq-title">Good to know.</h2></div>
+        <div class="faq-grid">
+          <details><summary>Is payment due when I submit the form?</summary><p>No. The form prepares an order-request email. Wait for confirmation of availability, fulfillment and the final total before paying.</p></details>
+          <details><summary>Can I choose pickup or shipping?</summary><p>Yes. Select local pickup or request a shipping quote in the customer-details form. Any applicable charge will be confirmed directly.</p></details>
+          <details><summary>When should I use Venmo?</summary><p>Use Venmo only after Hot Lava Honey confirms your order and final total.</p></details>
+          <details><summary>Is my request automatically accepted?</summary><p>Orders remain requests until availability and fulfillment details are confirmed directly by Hot Lava Honey.</p></details>
+        </div>
+        <p class="food-safety-note"><strong>Food-safety reminder:</strong> Never give honey to a child younger than 12 months.</p>
+      </section>
       <div class="order-panel" id="order">
-        <p class="eyebrow light">Order Online or by Phone</p>
-        <h2>Ready for something sweet?</h2>
-        <p>Call Hot Lava Honey to confirm merchandise and availability, then use Venmo for convenient payment.</p>
+        <p class="eyebrow light">Need Help?</p>
+        <h2>Questions before you send your request?</h2>
+        <p>Hot Lava Honey is happy to help with product availability, gifts, favors, local pickup and shipping questions.</p>
         <div class="order-actions">
           <a class="button button-primary" href="tel:+18083826032">Call 808-382-6032</a>
-          <a class="button venmo" href="https://www.venmo.com/u/hotlavahoney" target="_blank" rel="noopener noreferrer" aria-label="Pay Hot Lava Honey with Venmo (opens in a new tab)">Pay @hotlavahoney</a>
-          <a class="button button-secondary" href="mailto:Kaitheislandoyster@gmail.com?subject=Hot%20Lava%20Honey%20Question&amp;body=Aloha%20Hot%20Lava%20Honey%2C%0A%0AI%20have%20a%20question%20about%3A%20">Ask a Question</a>
+          <a class="button button-secondary" href="mailto:Kaitheislandoyster@gmail.com?subject=Hot%20Lava%20Honey%20Question&amp;body=Aloha%20Hot%20Lava%20Honey%2C%0A%0AI%20have%20a%20question%20about%3A%20">Email a Question</a>
+          <a class="button button-secondary" href="#cart">Return to Cart</a>
         </div>
       </div>
-      <p class="order-note">Orders are requests until availability, fulfillment details and the final total are confirmed directly by Hot Lava Honey.</p>
+      <p class="order-note">Orders are requests until availability, fulfillment details and the final total are confirmed directly by Hot Lava Honey. Please do not send payment before confirmation.</p>
     </section>
   </main>
   <footer>
@@ -208,6 +299,16 @@
       const removeDiscountButton = document.getElementById("remove-discount");
       const form = document.getElementById("checkout-form");
       const checkoutButton = document.getElementById("checkout-button");
+      const fulfillmentSelect = document.getElementById("fulfillment");
+      const addressField = document.getElementById("address");
+      const addressGuidance = document.getElementById("address-guidance");
+      const syncFulfillmentRequirements = () => {
+        const shipping = fulfillmentSelect.value.startsWith("Shipping");
+        addressField.required = shipping;
+        addressGuidance.textContent = shipping ? "(required for a shipping quote)" : "(not needed for local pickup)";
+      };
+      fulfillmentSelect.addEventListener("change", syncFulfillmentRequirements);
+      syncFulfillmentRequirements();
       const money = value => "$" + value.toFixed(2);
       const save = () => localStorage.setItem(storageKey, JSON.stringify(cart));
       const subtotal = () => entries().reduce((sum, [id, quantity]) => sum + products[id].price * quantity, 0);
@@ -360,13 +461,5 @@
     })();
   </script>
 
-  <div class="music-control" role="group" aria-label="Background music controls">
-    <audio id="site-music" autoplay loop preload="metadata">
-      <source src="luau-background.mp3" type="audio/mpeg">
-    </audio>
-    <button id="music-toggle" type="button" aria-pressed="false">♫ Play Music</button>
-    <a class="music-credit" href="https://pixabay.com/music/island-luau-144121/" target="_blank" rel="noopener noreferrer" aria-label="Luau by Matthew Mike Music on Pixabay">Luau · Pixabay</a>
-  </div>
-  <script src="music.js"></script>
 </body>
 </html>
