@@ -81,63 +81,62 @@
 </style>
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header video-site-header">
     <a class="brand" href="#home" aria-label="Hot Lava Honey home">
       <span class="brand-mark" aria-hidden="true">🍯</span>
       <span>Hot Lava Honey</span>
     </a>
-    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-    <nav class="nav-links" aria-label="Primary navigation">
-      <a href="#story">Our Story</a>
-      <a href="#honey">The Honey</a>
-      <a href="#benefits">Benefits</a>
-      <a href="scripture.html">Scripture</a>
-      <a href="#kau">Kaʻū</a>
-      <a href="#gallery">Photos</a>
-      <a href="#contact">Contact</a>
-      <label class="language-picker" for="language-select">
-        <span aria-hidden="true">🌐</span>
-        <span class="sr-only">Translate this website</span>
-        <select id="language-select" aria-label="Translate this website">
-          <option value="">Translate</option>
-          <option value="en">English</option>
-          <option value="es">Español</option>
-          <option value="ja">日本語</option>
-          <option value="tl">Filipino</option>
-          <option value="haw">ʻŌlelo Hawaiʻi</option>
-          <option value="zh-CN">中文</option>
-          <option value="ko">한국어</option>
-          <option value="fr">Français</option>
-          <option value="de">Deutsch</option>
-          <option value="pt">Português</option>
-          <option value="it">Italiano</option>
-          <option value="ar">العربية</option>
-          <option value="hi">हिन्दी</option>
-        </select>
-      </label>
-      <a class="nav-cta" href="order.html">Order Online</a>
-    </nav>
+    <a class="header-order-link" href="order.html">
+      <span class="ohia-nav-flower" aria-hidden="true">✿</span>
+      <span>Order Online</span>
+    </a>
   </header>
 
   <main>
-    <section class="hero" id="home">
-      <div class="hero-photo-wrap">
-        <img class="hero-label-photo" src="hot-lava-honey-label.jpeg" alt="Hot Lava Honey label featuring ʻōhiʻa lehua, honeybees, volcanic landscape and Kaʻū, Hawaiʻi" />
-      </div>
-      <div class="hero-copy">
+    <section class="hero hero-video" id="home" aria-label="Welcome to Hot Lava Honey">
+      <video class="hero-video-media" autoplay muted loop playsinline preload="metadata" poster="kau-apiary.jpeg" aria-label="A walk through the Hot Lava Honey apiary in Kaʻū">
+        <source src="hot-lava-honey-apiary-walk-refined.mp4" type="video/mp4" />
+        Your browser does not support embedded video.
+      </video>
+      <div class="hero-video-shade" aria-hidden="true"></div>
+
+      <div class="hero-video-content">
         <p class="eyebrow">Harvested in Kaʻū, Hawaiʻi</p>
         <h1>Honey shaped by lava land, ocean air & ʻōhiʻa lehua.</h1>
         <p class="hero-text">Pure Hawaiian honey with a bright floral character, gathered from the rugged southern slopes of Hawaiʻi Island.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="order.html">Order Online</a>
-          <a class="button button-secondary" href="#contact">Contact</a>
-        </div>
-        <div class="hero-badges">
-          <span>Pure Hawaiian Honey</span>
-          <span>8 fl oz</span>
-          <span>Small-Batch</span>
-        </div>
       </div>
+
+      <nav class="hero-flower-nav" aria-label="Explore Hot Lava Honey">
+        <a class="hero-nav-button" href="#home"><span class="ohia-nav-flower" aria-hidden="true">✿</span><span>Home</span></a>
+        <a class="hero-nav-button" href="#story"><span class="ohia-nav-flower" aria-hidden="true">✿</span><span>Our Story</span></a>
+        <a class="hero-nav-button" href="#honey"><span class="ohia-nav-flower" aria-hidden="true">✿</span><span>The Honey</span></a>
+        <a class="hero-nav-button" href="#benefits"><span class="ohia-nav-flower" aria-hidden="true">✿</span><span>Benefits</span></a>
+        <a class="hero-nav-button" href="scripture.html"><span class="ohia-nav-flower" aria-hidden="true">✿</span><span>Scripture</span></a>
+        <a class="hero-nav-button" href="#kau"><span class="ohia-nav-flower" aria-hidden="true">✿</span><span>Kaʻū</span></a>
+        <a class="hero-nav-button" href="#gallery"><span class="ohia-nav-flower" aria-hidden="true">✿</span><span>Photos</span></a>
+        <a class="hero-nav-button" href="#contact"><span class="ohia-nav-flower" aria-hidden="true">✿</span><span>Contact</span></a>
+        <label class="hero-nav-button hero-language-picker" for="language-select">
+          <span class="ohia-nav-flower" aria-hidden="true">✿</span>
+          <span class="sr-only">Translate this website</span>
+          <select id="language-select" aria-label="Translate this website">
+            <option value="">Translate</option>
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="ja">日本語</option>
+            <option value="tl">Filipino</option>
+            <option value="haw">ʻŌlelo Hawaiʻi</option>
+            <option value="zh-CN">中文</option>
+            <option value="ko">한국어</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+            <option value="pt">Português</option>
+            <option value="it">Italiano</option>
+            <option value="ar">العربية</option>
+            <option value="hi">हिन्दी</option>
+          </select>
+        </label>
+        <a class="hero-nav-button hero-nav-order" href="order.html"><span class="ohia-nav-flower" aria-hidden="true">✿</span><span>Order Online</span></a>
+      </nav>
     </section>
 
     <section class="intro" id="story">
