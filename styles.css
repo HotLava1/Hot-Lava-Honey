@@ -418,37 +418,32 @@ footer{max-width:1180px;margin:auto;padding:36px 28px 50px;border-top:1px solid 
 }
 
 
-/* Soft iridescent rainbow wave over the homepage apiary film */
+/* Gradual looping iridescent mist over the homepage apiary film */
 .hero.hero-video::after {
   content: "";
   display: block !important;
   position: absolute;
   z-index: 2;
-  left: -18%;
-  top: 23%;
-  width: 136%;
-  height: 29%;
+  left: -24%;
+  top: 7%;
+  width: 148%;
+  height: 62%;
   pointer-events: none;
-  opacity: .25;
-  border-radius: 48% 52% 44% 56% / 58% 45% 55% 42%;
+  opacity: .16;
+  border-radius: 48% 52% 50% 46% / 55% 48% 52% 45%;
   background:
-    linear-gradient(
-      96deg,
-      rgba(255,112,126,0) 0%,
-      rgba(255,112,126,.66) 14%,
-      rgba(255,190,105,.62) 29%,
-      rgba(255,235,141,.58) 42%,
-      rgba(132,224,174,.58) 56%,
-      rgba(105,196,244,.62) 70%,
-      rgba(177,139,246,.6) 84%,
-      rgba(236,146,220,0) 100%
-    );
-  filter: blur(22px) saturate(118%);
+    radial-gradient(ellipse at 12% 58%, rgba(255,130,150,.62) 0%, rgba(255,130,150,.2) 17%, transparent 35%),
+    radial-gradient(ellipse at 30% 43%, rgba(255,207,126,.58) 0%, rgba(255,207,126,.18) 18%, transparent 37%),
+    radial-gradient(ellipse at 48% 60%, rgba(235,241,154,.46) 0%, rgba(235,241,154,.14) 18%, transparent 36%),
+    radial-gradient(ellipse at 64% 42%, rgba(133,224,191,.52) 0%, rgba(133,224,191,.16) 19%, transparent 38%),
+    radial-gradient(ellipse at 80% 59%, rgba(121,194,246,.56) 0%, rgba(121,194,246,.17) 18%, transparent 37%),
+    radial-gradient(ellipse at 96% 43%, rgba(198,151,244,.56) 0%, rgba(198,151,244,.16) 17%, transparent 35%);
+  filter: blur(46px) saturate(106%);
   mix-blend-mode: screen;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
-  transform: rotate(-5deg) translate3d(0,0,0);
-  animation: rainbow-wave-drift 12s ease-in-out infinite alternate;
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 34%, rgba(0,0,0,.75) 58%, transparent 82%);
+  mask-image: radial-gradient(ellipse at center, #000 34%, rgba(0,0,0,.75) 58%, transparent 82%);
+  transform: translate3d(0,0,0) rotate(-2deg) scale(1);
+  animation: iridescent-mist-loop 22s ease-in-out infinite;
 }
 
 .hero.hero-video::before {
@@ -456,59 +451,63 @@ footer{max-width:1180px;margin:auto;padding:36px 28px 50px;border-top:1px solid 
   display: block !important;
   position: absolute;
   z-index: 2;
-  inset: 16% 7% 31%;
+  inset: 17% 7% 31%;
   pointer-events: none;
-  opacity: .3;
+  opacity: .16;
   background:
-    radial-gradient(circle at 13% 58%, rgba(255,255,255,.62) 0 2px, transparent 5px),
-    radial-gradient(circle at 27% 42%, rgba(255,222,172,.56) 0 3px, transparent 7px),
-    radial-gradient(circle at 44% 65%, rgba(192,246,224,.58) 0 2px, transparent 6px),
-    radial-gradient(circle at 62% 36%, rgba(190,221,255,.62) 0 3px, transparent 8px),
-    radial-gradient(circle at 78% 59%, rgba(232,206,255,.6) 0 2px, transparent 6px),
-    radial-gradient(circle at 90% 43%, rgba(255,224,244,.56) 0 3px, transparent 7px);
-  filter: blur(.4px);
+    radial-gradient(circle at 13% 63%, rgba(255,255,255,.48) 0 2px, transparent 5px),
+    radial-gradient(circle at 28% 39%, rgba(255,236,204,.42) 0 2px, transparent 6px),
+    radial-gradient(circle at 43% 67%, rgba(212,250,233,.45) 0 2px, transparent 5px),
+    radial-gradient(circle at 61% 36%, rgba(210,232,255,.46) 0 2px, transparent 6px),
+    radial-gradient(circle at 77% 62%, rgba(238,221,255,.44) 0 2px, transparent 5px),
+    radial-gradient(circle at 91% 42%, rgba(255,228,245,.42) 0 2px, transparent 6px);
+  filter: blur(.6px);
   mix-blend-mode: screen;
-  animation: rainbow-sparkle-float 9s ease-in-out infinite alternate;
+  animation: effervescent-mist-loop 18s ease-in-out infinite;
 }
 
 .hero-video-content {
   z-index: 3;
 }
 
-@keyframes rainbow-wave-drift {
-  0% {
-    transform: rotate(-6deg) translate3d(-2.5%, 8px, 0) scaleY(.9);
-    opacity: .19;
+@keyframes iridescent-mist-loop {
+  0%, 100% {
+    transform: translate3d(-1.5%, 8px, 0) rotate(-2deg) scale(1);
+    opacity: .12;
+  }
+  25% {
+    transform: translate3d(1%, -5px, 0) rotate(-.5deg) scale(1.04, .96);
+    opacity: .17;
   }
   50% {
-    transform: rotate(-3.5deg) translate3d(1%, -8px, 0) scaleY(1.08);
-    opacity: .28;
+    transform: translate3d(2%, -12px, 0) rotate(1deg) scale(.98, 1.06);
+    opacity: .19;
   }
-  100% {
-    transform: rotate(-5deg) translate3d(3%, 5px, 0) scaleY(.96);
-    opacity: .22;
+  75% {
+    transform: translate3d(0, 2px, 0) rotate(-1deg) scale(1.03, .98);
+    opacity: .15;
   }
 }
 
-@keyframes rainbow-sparkle-float {
-  from { transform: translate3d(-1%, 7px, 0); opacity: .2; }
-  to { transform: translate3d(1.5%, -9px, 0); opacity: .38; }
+@keyframes effervescent-mist-loop {
+  0%, 100% { transform: translate3d(-1%, 8px, 0); opacity: .1; }
+  33% { transform: translate3d(.5%, -5px, 0); opacity: .16; }
+  66% { transform: translate3d(1.5%, -12px, 0); opacity: .2; }
 }
 
 @media (max-width: 650px) {
   .hero.hero-video::after {
-    top: 27%;
-    left: -40%;
-    width: 180%;
-    height: 23%;
-    opacity: .22;
-    filter: blur(18px) saturate(112%);
-    transform: rotate(-9deg);
+    left: -46%;
+    top: 13%;
+    width: 192%;
+    height: 54%;
+    opacity: .14;
+    filter: blur(38px) saturate(103%);
   }
 
   .hero.hero-video::before {
     inset: 22% 5% 35%;
-    opacity: .24;
+    opacity: .13;
   }
 }
 
