@@ -416,3 +416,105 @@ footer{max-width:1180px;margin:auto;padding:36px 28px 50px;border-top:1px solid 
     background: linear-gradient(rgba(30,18,11,.52), rgba(30,18,11,.72)), url("kau-apiary.jpeg") center / cover no-repeat;
   }
 }
+
+
+/* Soft iridescent rainbow wave over the homepage apiary film */
+.hero.hero-video::after {
+  content: "";
+  display: block !important;
+  position: absolute;
+  z-index: 2;
+  left: -18%;
+  top: 23%;
+  width: 136%;
+  height: 29%;
+  pointer-events: none;
+  opacity: .25;
+  border-radius: 48% 52% 44% 56% / 58% 45% 55% 42%;
+  background:
+    linear-gradient(
+      96deg,
+      rgba(255,112,126,0) 0%,
+      rgba(255,112,126,.66) 14%,
+      rgba(255,190,105,.62) 29%,
+      rgba(255,235,141,.58) 42%,
+      rgba(132,224,174,.58) 56%,
+      rgba(105,196,244,.62) 70%,
+      rgba(177,139,246,.6) 84%,
+      rgba(236,146,220,0) 100%
+    );
+  filter: blur(22px) saturate(118%);
+  mix-blend-mode: screen;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  transform: rotate(-5deg) translate3d(0,0,0);
+  animation: rainbow-wave-drift 12s ease-in-out infinite alternate;
+}
+
+.hero.hero-video::before {
+  content: "";
+  display: block !important;
+  position: absolute;
+  z-index: 2;
+  inset: 16% 7% 31%;
+  pointer-events: none;
+  opacity: .3;
+  background:
+    radial-gradient(circle at 13% 58%, rgba(255,255,255,.62) 0 2px, transparent 5px),
+    radial-gradient(circle at 27% 42%, rgba(255,222,172,.56) 0 3px, transparent 7px),
+    radial-gradient(circle at 44% 65%, rgba(192,246,224,.58) 0 2px, transparent 6px),
+    radial-gradient(circle at 62% 36%, rgba(190,221,255,.62) 0 3px, transparent 8px),
+    radial-gradient(circle at 78% 59%, rgba(232,206,255,.6) 0 2px, transparent 6px),
+    radial-gradient(circle at 90% 43%, rgba(255,224,244,.56) 0 3px, transparent 7px);
+  filter: blur(.4px);
+  mix-blend-mode: screen;
+  animation: rainbow-sparkle-float 9s ease-in-out infinite alternate;
+}
+
+.hero-video-content {
+  z-index: 3;
+}
+
+@keyframes rainbow-wave-drift {
+  0% {
+    transform: rotate(-6deg) translate3d(-2.5%, 8px, 0) scaleY(.9);
+    opacity: .19;
+  }
+  50% {
+    transform: rotate(-3.5deg) translate3d(1%, -8px, 0) scaleY(1.08);
+    opacity: .28;
+  }
+  100% {
+    transform: rotate(-5deg) translate3d(3%, 5px, 0) scaleY(.96);
+    opacity: .22;
+  }
+}
+
+@keyframes rainbow-sparkle-float {
+  from { transform: translate3d(-1%, 7px, 0); opacity: .2; }
+  to { transform: translate3d(1.5%, -9px, 0); opacity: .38; }
+}
+
+@media (max-width: 650px) {
+  .hero.hero-video::after {
+    top: 27%;
+    left: -40%;
+    width: 180%;
+    height: 23%;
+    opacity: .22;
+    filter: blur(18px) saturate(112%);
+    transform: rotate(-9deg);
+  }
+
+  .hero.hero-video::before {
+    inset: 22% 5% 35%;
+    opacity: .24;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero.hero-video::before,
+  .hero.hero-video::after {
+    animation: none;
+  }
+}
