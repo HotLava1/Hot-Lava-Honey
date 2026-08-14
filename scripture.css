@@ -291,3 +291,22 @@
     font-size: clamp(2rem, 9vw, 2.75rem);
   }
 }
+
+
+/* Refined ʻōhiʻa photograph replacing the Scripture video */
+.scripture-hero-image {
+  display: block;
+  object-position: center 48%;
+}
+
+@media (max-width: 650px) {
+  .scripture-hero-image {
+    object-position: 58% center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scripture-hero-image {
+    display: block;
+  }
+}
