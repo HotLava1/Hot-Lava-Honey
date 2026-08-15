@@ -8,9 +8,6 @@
   audio.volume = 0.18;
 
   const savedTime = Number(sessionStorage.getItem(timeKey));
-  if (Number.isFinite(savedTime) && savedTime > 0 && savedTime < 98) {
-    audio.currentTime = savedTime;
-  }
 
   function updateButton() {
     const playing = !audio.paused;
@@ -20,6 +17,7 @@
 
   async function startMusic() {
     try {
+      if (Number.isFinite(savedTime) && savedTime > 0 && savedTime < 98) audio.currentTime = savedTime;
       await audio.play();
       localStorage.setItem(preferenceKey, "play");
     } catch (_) {
@@ -44,7 +42,4 @@
   });
 
   updateButton();
-  if (localStorage.getItem(preferenceKey) !== "pause") {
-    startMusic();
-  }
 })();
