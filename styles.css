@@ -517,3 +517,34 @@ footer{max-width:1180px;margin:auto;padding:36px 28px 50px;border-top:1px solid 
     animation: none;
   }
 }
+
+
+/* Performance maintenance: defer off-screen rendering and simplify mobile effects. */
+@supports (content-visibility: auto) {
+  .intro,
+  .product-section,
+  .photo-story,
+  .benefits-section,
+  .place-section,
+  .uses-section,
+  .cta,
+  .honey-intro,
+  .honey-collection,
+  .honey-ways,
+  .verse-journey,
+  .verse-closing {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 900px;
+  }
+}
+@media (max-width: 700px) {
+  body { background-attachment: scroll; }
+  .hero-nav-button,
+  .contact-card,
+  .product-photo-card figcaption,
+  .photo-grid figcaption,
+  .music-control {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
