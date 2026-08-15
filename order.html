@@ -52,16 +52,10 @@
     .quantity-control button{width:34px;height:34px;border:0;background:#fff8e9;cursor:pointer;font-size:1.1rem}
     .quantity-control span{min-width:32px;text-align:center;font-weight:700}
     .remove-item{border:0;background:none;color:#9b3d20;text-decoration:underline;cursor:pointer}
-    .discount-box{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:.65rem;align-items:end;margin-top:1.3rem;padding:1rem;border-radius:16px;background:#fff8e9}
-    .discount-field{display:grid;gap:.35rem}.discount-field label{font-weight:700;color:#3e2b1e}
-    .discount-field input{width:100%;padding:.8rem 1rem;border:1px solid rgba(91,57,25,.25);border-radius:12px;background:#fff;font:inherit;text-transform:uppercase}
-    .discount-box button{border:0;cursor:pointer;font:inherit}.discount-status{grid-column:1/-1;min-height:1.3rem;margin:0;color:#715f50;font-size:.88rem}
-    .discount-status.success{color:#2f6a3a;font-weight:700}.discount-status.error{color:#9b3d20;font-weight:700}
     .cart-totals{display:grid;gap:.55rem;max-width:430px;margin:1.1rem 0 0 auto;padding-top:1rem;border-top:1px solid rgba(91,57,25,.13)}
     .cart-summary{display:flex;justify-content:space-between;align-items:center;gap:1rem;font-size:1rem}
-    .cart-summary strong{color:#3e2b1e}.cart-summary.discount{color:#2f6a3a}.cart-summary.discount strong{color:#2f6a3a}
+    .cart-summary strong{color:#3e2b1e}
     .cart-summary.final{padding-top:.65rem;border-top:2px solid rgba(91,57,25,.18);font-size:1.12rem}.cart-summary.final strong{color:#7b2c16;font-size:1.5rem}
-    .discount-row[hidden],#remove-discount[hidden]{display:none}
     .checkout-form{display:grid;gap:1.25rem;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(91,57,25,.13)}
     .checkout-form[hidden]{display:none}
     .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
@@ -77,7 +71,7 @@
     .venmo-next{padding:1rem;border-radius:14px;background:#e8f5fc;color:#214d68}
     .venmo-next[hidden]{display:none}
     .status-message{min-height:1.5rem;color:#41533a;font-weight:700}
-    @media(max-width:700px){.discount-box{grid-template-columns:1fr 1fr}.discount-field{grid-column:1/-1}.cart-row{grid-template-columns:1fr auto}.cart-row .cart-line-total{grid-column:1}.remove-item{justify-self:end}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.cart-heading{align-items:flex-start;flex-direction:column}}
+    @media(max-width:700px){.cart-row{grid-template-columns:1fr auto}.cart-row .cart-line-total{grid-column:1}.remove-item{justify-self:end}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.cart-heading{align-items:flex-start;flex-direction:column}}
     @media(max-width:800px){.order-hero{grid-template-columns:1fr;text-align:center}.order-hero p{margin-left:auto;margin-right:auto}.order-hero-photo{max-width:330px}.inventory-grid{grid-template-columns:1fr}}
 
     .order-trust-bar{display:flex;justify-content:center;gap:clamp(1rem,4vw,3.5rem);flex-wrap:wrap;padding:12px 24px;background:#f7cd55;color:#2d1c14;font-size:.86rem;font-weight:800;text-align:center}
@@ -205,15 +199,8 @@
           <a href="#shop">Continue shopping</a>
         </div>
         <div class="cart-list" id="cart-list" aria-live="polite"></div>
-        <div class="discount-box" aria-labelledby="discount-label">
-          <div class="discount-field"><label id="discount-label" for="discount-code">Enter discount code</label><input id="discount-code" type="text" inputmode="text" autocomplete="off" placeholder="Discount code" maxlength="30"></div>
-          <button class="button button-primary" id="apply-discount" type="button">Apply Code</button>
-          <button class="button button-secondary" id="remove-discount" type="button" hidden>Remove</button>
-          <p class="discount-status" id="discount-status" role="status" aria-live="polite"></p>
-        </div>
         <div class="cart-totals">
           <div class="cart-summary"><span>Merchandise subtotal</span><strong id="cart-subtotal">$0.00</strong></div>
-          <div class="cart-summary discount discount-row" id="discount-row" hidden><span>QUEENMELI777 · 10% off</span><strong id="discount-amount">−$0.00</strong></div>
           <div class="cart-summary final"><span>Final merchandise total</span><strong id="cart-total">$0.00</strong></div>
         </div>
         <p class="checkout-help">This total covers merchandise only. No payment is due yet; availability and any pickup, shipping or delivery details will be confirmed first.</p>
@@ -286,18 +273,9 @@
       let cart = {};
       try { cart = JSON.parse(localStorage.getItem(storageKey)) || {}; } catch (_) { cart = {}; }
 
-      const discountStorageKey = "hotLavaHoneyDiscount";
-      const validDiscountCode = "QUEENMELI777";
-      const discountRate = 0.10;
-      let discountApplied = localStorage.getItem(discountStorageKey) === validDiscountCode;
       const list = document.getElementById("cart-list");
       const subtotalEl = document.getElementById("cart-subtotal");
       const totalEl = document.getElementById("cart-total");
-      const discountRow = document.getElementById("discount-row");
-      const discountAmountEl = document.getElementById("discount-amount");
-      const discountInput = document.getElementById("discount-code");
-      const discountStatus = document.getElementById("discount-status");
-      const removeDiscountButton = document.getElementById("remove-discount");
       const form = document.getElementById("checkout-form");
       const checkoutButton = document.getElementById("checkout-button");
       const fulfillmentSelect = document.getElementById("fulfillment");
@@ -313,8 +291,7 @@
       const money = value => "$" + value.toFixed(2);
       const save = () => localStorage.setItem(storageKey, JSON.stringify(cart));
       const subtotal = () => entries().reduce((sum, [id, quantity]) => sum + products[id].price * quantity, 0);
-      const discountAmount = () => discountApplied ? Math.round(subtotal() * discountRate * 100) / 100 : 0;
-      const finalTotal = () => Math.max(0, subtotal() - discountAmount());
+      const finalTotal = () => subtotal();
 
       function entries() {
         return Object.entries(cart).filter(([id, quantity]) => products[id] && quantity > 0);
@@ -326,10 +303,7 @@
         if (!items.length) {
           list.innerHTML = '<div class="cart-empty">Your cart is empty. Choose a product above to begin.</div>';
           subtotalEl.textContent = "$0.00";
-          discountAmountEl.textContent = "−$0.00";
           totalEl.textContent = "$0.00";
-          discountRow.hidden = !discountApplied;
-          removeDiscountButton.hidden = !discountApplied;
           checkoutButton.disabled = true;
           form.hidden = true;
           return;
@@ -349,11 +323,7 @@
           </div>`;
         }).join("");
         subtotalEl.textContent = money(subtotal());
-        discountAmountEl.textContent = "−" + money(discountAmount());
         totalEl.textContent = money(finalTotal());
-        discountRow.hidden = !discountApplied;
-        removeDiscountButton.hidden = !discountApplied;
-        if (discountApplied) discountInput.value = validDiscountCode;
       }
 
       document.querySelectorAll(".add-to-cart").forEach(button => button.addEventListener("click", () => {
@@ -374,43 +344,8 @@
         if (cart[id] === 0) delete cart[id];
         save(); renderCart();
       });
-      document.getElementById("apply-discount").addEventListener("click", () => {
-        const entered = discountInput.value.trim().toUpperCase();
-        discountStatus.className = "discount-status";
-        if (entered === validDiscountCode) {
-          discountApplied = true;
-          localStorage.setItem(discountStorageKey, validDiscountCode);
-          discountStatus.textContent = "QUEENMELI777 applied — you saved 10% on merchandise.";
-          discountStatus.classList.add("success");
-          renderCart();
-        } else {
-          discountApplied = false;
-          localStorage.removeItem(discountStorageKey);
-          discountStatus.textContent = "That discount code is not valid. Please check it and try again.";
-          discountStatus.classList.add("error");
-          renderCart();
-        }
-      });
-      discountInput.addEventListener("keydown", event => {
-        if (event.key === "Enter") {
-          event.preventDefault();
-          document.getElementById("apply-discount").click();
-        }
-      });
-      removeDiscountButton.addEventListener("click", () => {
-        discountApplied = false;
-        localStorage.removeItem(discountStorageKey);
-        discountInput.value = "";
-        discountStatus.textContent = "Discount code removed.";
-        discountStatus.className = "discount-status";
-        renderCart();
-      });
       document.getElementById("clear-cart").addEventListener("click", () => {
         cart = {};
-        discountApplied = false;
-        localStorage.removeItem(discountStorageKey);
-        discountInput.value = "";
-        discountStatus.textContent = "";
         save();
         renderCart();
       });
@@ -429,7 +364,6 @@
           return `• ${quantity} × ${item.name} — ${money(item.price * quantity)}`;
         });
         const orderSubtotal = subtotal();
-        const orderDiscount = discountAmount();
         const orderTotal = finalTotal();
         const body = [
           "Aloha Hot Lava Honey,",
@@ -438,8 +372,6 @@
           ...lines,
           "",
           "Merchandise subtotal: " + money(orderSubtotal),
-          "Discount code: " + (discountApplied ? validDiscountCode + " (10% off)" : "None"),
-          "Discount: −" + money(orderDiscount),
           "Final merchandise total: " + money(orderTotal),
           "Shipping/delivery charges: To be confirmed",
           "",
