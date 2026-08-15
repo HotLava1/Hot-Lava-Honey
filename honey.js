@@ -27,15 +27,4 @@
   reducedMotion.addEventListener?.("change", updatePlayback);
   film.addEventListener("canplay", updatePlayback, { once: true });
 
-  // Skip the final still frame and return directly to the opening motion.
-  if ("requestVideoFrameCallback" in HTMLVideoElement.prototype) {
-    const keepLoopTight = () => {
-      if (film.duration && film.duration - film.currentTime < 0.07) {
-        film.currentTime = 0;
-        updatePlayback();
-      }
-      film.requestVideoFrameCallback(keepLoopTight);
-    };
-    film.requestVideoFrameCallback(keepLoopTight);
-  }
 })();
