@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# After you publish the site, replace YOUR-PUBLIC-WEBSITE-URL below with the real public address.
-Sitemap: https://YOUR-PUBLIC-WEBSITE-URL/sitemap.xml
+Sitemap: https://hotlava1.github.io/Hot-Lava-Honey/sitemap.xml
