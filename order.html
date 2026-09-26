@@ -281,6 +281,24 @@
     <p>P.O. Box 6178 · Ocean View, HI 96737 · 808-382-6032</p>
     <p>© <span id="year"></span> Hot Lava Honey. All rights reserved.</p>
   </footer>
+  <script>
+    // Keep deep links aligned after product photos above the target finish loading.
+    (() => {
+      const target = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
+      const cards = [...document.querySelectorAll(".inventory-card")];
+      const index = cards.indexOf(target);
+      if (index < 0) return;
+      const images = cards.slice(0, index + 1).flatMap(card => [...card.querySelectorAll("img")]);
+      Promise.all(images.map(img => {
+        img.loading = "eager";
+        return img.complete ? Promise.resolve() : new Promise(resolve => {
+          img.addEventListener("load", resolve, { once: true });
+          img.addEventListener("error", resolve, { once: true });
+        });
+      })).then(() => requestAnimationFrame(() => target.scrollIntoView({ block: "start", behavior: "instant" })));
+    })();
+  </script>
+
   <script src="script.js"></script>
 
   <script>
