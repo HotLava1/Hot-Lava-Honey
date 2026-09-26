@@ -28,7 +28,7 @@
     .shop-heading{max-width:760px;margin:0 auto 2.5rem;text-align:center}
     .shop-heading h2{margin:.4rem 0 .8rem;font-family:Fraunces,Georgia,serif;font-size:clamp(2rem,5vw,3.6rem)}
     .inventory-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem;max-width:1100px;margin:0 auto 2.5rem}
-    .inventory-card{display:flex;flex-direction:column;padding:clamp(1.35rem,3vw,2rem);border:1px solid rgba(91,57,25,.16);border-radius:22px;background:#fff;box-shadow:0 14px 36px rgba(91,57,25,.1)}
+    .inventory-card{scroll-margin-top:100px;display:flex;flex-direction:column;padding:clamp(1.35rem,3vw,2rem);border:1px solid rgba(91,57,25,.16);border-radius:22px;background:#fff;box-shadow:0 14px 36px rgba(91,57,25,.1)}
     .inventory-size{margin:0 0 .45rem;color:#9b3d20;font-size:.78rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase}
     .inventory-card h3{margin:0 0 .7rem;font-family:Fraunces,Georgia,serif;font-size:clamp(1.35rem,2.4vw,1.8rem)}
     .inventory-card>p:not(.inventory-size){margin:0 0 1.3rem;color:#66584c;line-height:1.65}
@@ -170,7 +170,7 @@
         <p>For the pantry, celebrations, gifts and baskets. Add your favorites below; availability and any shipping charge will be confirmed before payment.</p>
       </div>
       <div class="inventory-grid">
-        <article class="inventory-card">
+        <article class="inventory-card" id="raw-8oz">
           <img class="product-photo full-image" src="hot-lava-ohia-8oz-sunset.jpg" alt="Two 8 fluid ounce Pure Raw ʻŌhiʻa Lehua Hot Lava Honey bottles with ivory lace covers against a pink Kaʻū sunset" loading="lazy" decoding="async" />
           <p class="inventory-size">Net wt. 8 oz (226 g)</p>
           <h3>Pure Raw ʻŌhiʻa Lehua Honey</h3>
@@ -178,7 +178,7 @@
           <ul class="product-points"><li>Pure raw honey</li><li>Small-batch</li><li>Gift-ready jar</li></ul>
           <div class="price-list"><div class="price-row"><span>Per jar</span><strong>$13.40</strong></div><button class="button button-primary add-to-cart" type="button" data-id="raw-8oz" data-name="Pure Raw ʻŌhiʻa Lehua Honey — net wt. 8 oz" data-price="13.40">Add to Cart · $13.40</button></div>
         </article>
-        <article class="inventory-card">
+        <article class="inventory-card" id="whipped-8oz">
           <img class="product-photo full-image" src="D3349C26-3A58-4DDD-A4FC-BD508AD07B52.png" alt="8 ounce jar of Pure Raw Whipped ʻŌhiʻa Lehua Hot Lava Honey with a red cloth cover" loading="lazy" decoding="async" />
           <p class="inventory-size">Net wt. 8 oz (226 g)</p>
           <h3>Pure Raw Whipped ʻŌhiʻa Lehua Honey</h3>
@@ -186,7 +186,7 @@
           <ul class="product-points"><li>Smooth texture</li><li>Easy to spread</li><li>Small-batch</li></ul>
           <div class="price-list"><div class="price-row"><span>Per jar</span><strong>$14.00</strong></div><button class="button button-primary add-to-cart" type="button" data-id="whipped-8oz" data-name="Pure Raw Whipped ʻŌhiʻa Lehua Honey — net wt. 8 oz" data-price="14.00">Add to Cart · $14.00</button></div>
         </article>
-        <article class="inventory-card">
+        <article class="inventory-card" id="meli-bears">
           <img class="product-photo meli-bear-photo" src="meli-bears-floral-labels.jpg?v=20260902-complete" width="1268" height="1241" alt="Two 2 ounce Hot Lava Honey Meli Bear bottles with ʻōhiʻa lehua floral labels" loading="lazy" decoding="async" />
           <p class="inventory-size">2 oz “Meli Bear”</p>
           <h3>Signature (Hawaiian Honey Bears)</h3>
@@ -194,7 +194,7 @@
           <ul class="product-points"><li>Single or five-pack</li><li>Party-friendly size</li><li>Ready for gifting</li></ul>
           <div class="price-list"><div class="price-row"><span>Single bottle</span><strong>$3.75</strong></div><button class="button button-primary add-to-cart" type="button" data-id="meli-single" data-name="Meli Bear — single 2 oz bottle" data-price="3.75">Add Single · $3.75</button><div class="price-row"><span>5-pack</span><strong>$15.50</strong></div><button class="button button-primary add-to-cart" type="button" data-id="meli-five" data-name="Meli Bear — 5-pack of 2 oz bottles" data-price="15.50">Add 5-Pack · $15.50</button></div>
         </article>
-        <article class="inventory-card">
+        <article class="inventory-card" id="omiyage-mini">
           <img class="product-photo full-image" src="hot-lava-omiyage-single-sunset.jpg" alt="One Hot Lava Honey Omiyage mini glass jar with a blue gingham cover against a pink Kaʻū sunset" loading="lazy" decoding="async" />
           <p class="inventory-size">1.5 oz mini glass “Omiyage”</p>
           <h3>Mini Gifts &amp; Favors</h3>
